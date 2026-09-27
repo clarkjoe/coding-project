@@ -1,0 +1,122 @@
+/* TODO: Define your professional legal industry styling */
+
+:root {
+  /* TODO: Add your color palette here */
+  /* Recommended legal industry colors:
+   * - Navy blue for headers and primary elements (#1e3a8a)
+   * - Gold for accents and highlights (#d97706) 
+   * - Professional grays (#64748b, #f8fafc, #334155)
+   * - Priority colors: red (high), yellow (medium), green (low)
+   */
+  
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  /* TODO: Add background color */
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* TODO: Style your headings */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 600;
+  /* TODO: Add heading colors */
+}
+
+p {
+  margin: 0;
+}
+
+/* TODO: Style your buttons */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s;
+  /* TODO: Add button colors and hover states */
+}
+
+/* TODO: Add utility classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  /* TODO: Add shadows and borders for professional appearance */
+}
+
+/* TODO: Create priority color classes */
+/* Example:
+.priority-high {
+  color: red;
+  font-weight: 600;
+}
+.priority-medium {
+  color: orange;
+  font-weight: 600;
+}
+.priority-low {
+  color: green;
+  font-weight: 600;
+}
+*/
+
+/* TODO: Create status badge styles */
+/* Example:
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status-active {
+  background-color: light-green;
+  color: dark-green;
+}
+*/
+
+/* TODO: Add responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+  
+  /* TODO: Add mobile-specific styles */
+}

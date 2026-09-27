@@ -1,0 +1,33 @@
+-- Database initialization file for Attorney Dashboard
+-- 
+-- TODO: Create the database schema for the attorney dashboard
+-- 
+-- You need to create two tables based on the API requirements:
+-- 1. tasks table - for managing attorney tasks
+-- 2. cases table - for managing legal cases
+-- 
+-- Refer to the README.md for the required table schemas and field specifications
+-- 
+-- Don't forget to:
+-- - Use appropriate data types for each field
+-- - Set up proper primary keys and constraints  
+-- - Add default values where specified
+-- - Create indexes for better query performance
+-- - Add sample data for testing your application
+-- 
+-- Example table structure (you need to implement this):
+-- CREATE TABLE tasks (
+--     -- Add your table structure here based on the Task interface in README.md
+-- );
+-- 
+-- CREATE TABLE cases (
+--     -- Add your table structure here based on the Case interface in README.md
+-- );
+-- 
+-- Don't forget to add sample data:
+-- INSERT INTO tasks (...) VALUES (...);
+-- INSERT INTO cases (...) VALUES (...);
+-- 
+-- And create performance indexes:
+-- CREATE INDEX ... ON tasks(...);
+-- CREATE INDEX ... ON cases(...);

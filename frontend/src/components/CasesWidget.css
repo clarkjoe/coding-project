@@ -1,0 +1,42 @@
+/* TODO: Style your cases widget */
+
+.cases-widget {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.widget-header {
+  background-color: #2c5282;
+  color: white;
+  padding: 1rem;
+}
+
+.widget-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.widget-content {
+  padding: 1rem;
+}
+
+.placeholder-content {
+  color: #6c757d;
+  text-align: left;
+}
+
+.placeholder-content ul {
+  margin-top: 1rem;
+}
+
+/* TODO: Add styles for:
+- Individual case items
+- Case status badges (active/closed/pending)
+- Case type indicators
+- Last activity timestamps
+- Loading spinner
+- Error messages
+- Hover effects
+*/

@@ -1,0 +1,18 @@
+/* TODO: Add your app-wide styles here */
+
+.App {
+  text-align: center;
+}
+
+/* Example starter styles - feel free to modify or replace */
+.App h1 {
+  color: #1a365d;
+  margin: 2rem 0;
+}
+
+/* TODO: Add styles for:
+- Professional legal color scheme
+- Responsive layout
+- Grid/flexbox for dashboard widgets
+- Typography for legal documents
+*/

@@ -1,0 +1,26 @@
+# TODO: Implement GitHub Actions CI/CD Pipeline (BONUS ASSIGNMENT)
+#
+# Create a workflow that runs on pull requests and includes:
+# - Backend tests (Go)
+# - Frontend tests (Node.js/React) 
+# - Docker build verification
+# - Basic integration tests
+#
+# Example structure:
+# name: CI
+# on:
+#   pull_request:
+#     branches: [main]
+# jobs:
+#   test:
+#     runs-on: ubuntu-latest
+#     services:
+#       postgres:
+#         # Configure PostgreSQL service for tests
+#     steps:
+#       # Add your CI steps here
+#       # - Checkout code
+#       # - Setup Go environment  
+#       # - Setup Node.js environment
+#       # - Run tests
+#       # - Build Docker images

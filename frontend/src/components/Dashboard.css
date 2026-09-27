@@ -1,0 +1,40 @@
+/* TODO: Style your dashboard layout */
+
+.dashboard {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.widget-placeholder {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 2px dashed #dee2e6;
+  text-align: center;
+  color: #6c757d;
+}
+
+/* TODO: Add responsive breakpoints */
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* TODO: Add styles for:
+- Widget containers
+- Loading states
+- Error states
+- Professional color scheme
+*/
