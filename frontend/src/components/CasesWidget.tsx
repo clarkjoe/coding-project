@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+//import { useState, useEffect } from 'react'
 import './CasesWidget.css'
 // TODO: Import your API service and types
 // import { getCases } from '../services/api'
