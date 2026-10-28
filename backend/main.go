@@ -1,59 +1,101 @@
 package main
 
 import (
-	"log"
 	"database/sql"
-	"github.com/gin-gonic/gin"
-	"github.com/gin-contrib/cors"
+	"log"
+	"net/http"
 	"time"
+	"github.com/gin-contrib/cors"
+	"github.com/gin-gonic/gin"
 	_ "github.com/lib/pq"
-	
 	// TODO: Add required imports for database, web framework, etc.
 	// Example imports you might need:
 	// "database/sql"
-	// "github.com/gorilla/mux" 
+	// "github.com/gorilla/mux"
 	// _ "github.com/lib/pq"
 )
 
 var db *sql.DB
 
 type Task struct {
-    ID          int       `json:"id"`
-    Title       string    `json:"title"`
-    Description string    `json:"description"`
-    Priority    string    `json:"priority"`
-    Status      string    `json:"status"`
-    DueDate     time.Time `json:"due_date"`
-    CreatedAt   time.Time `json:"created_at"`
-    UpdatedAt   time.Time `json:"updated_at"`
+    ID          int            `json:"id"`
+    Title       string         `json:"title"`
+    Description sql.NullString `json:"description"`
+    Priority    string         `json:"priority"`
+    Status      string         `json:"status"`
+    DueDate     time.Time      `json:"due_date"`
+    CreatedAt   time.Time      `json:"created_at"`
+    UpdatedAt   time.Time      `json:"updated_at"`
 }
 
 type Case struct {
-    ID           int       `json:"id"`
-    CaseNumber   string    `json:"case_number"`
-    ClientName   string    `json:"client_name"`
-    CaseType     string    `json:"case_type"`
-    Status       string    `json:"status"`
-    LastActivity string    `json:"last_activity"`
-    CreatedAt    time.Time `json:"created_at"`
-    UpdatedAt    time.Time `json:"updated_at"`
+    ID           int            `json:"id"`
+    CaseNumber   int            `json:"case_number"`
+    ClientName   string         `json:"client_name"`
+    CaseType     string         `json:"case_type"`
+    Status       string         `json:"status"`
+    LastActivity sql.NullString `json:"last_activity"`
+    CreatedAt    time.Time      `json:"created_at"`
+    UpdatedAt    time.Time      `json:"updated_at"`
 }
 
 func getTasksHandler(context *gin.Context) {
-	return
+	rows, err := db.Query("SELECT * FROM tasks WHERE status='pending' ORDER BY created_at DESC LIMIT 5")
+	if err != nil {
+		context.AbortWithStatusJSON(http.StatusInternalServerError, "GET tasks query failed")
+		return
+	}
+
+	var tasks []Task
+	for rows.Next() {
+		var task Task
+		if err = rows.Scan(&task.ID, &task.Title, &task.Description, &task.Priority, 
+						   &task.Status, &task.DueDate, &task.CreatedAt, &task.UpdatedAt); err != nil {
+			context.AbortWithStatusJSON(http.StatusInternalServerError, "Error processing task row")
+			return
+		}
+		tasks = append(tasks, task)
+	}
+	if err = rows.Err(); err != nil {
+		context.AbortWithStatusJSON(http.StatusInternalServerError, err)
+		return
+	}
+
+	context.JSON(http.StatusOK, tasks)
 }
 
 func getCasesHandler(context *gin.Context) {
-	return
+	rows, err := db.Query("SELECT * FROM cases ORDER BY updated_at DESC LIMIT 5")
+	if err != nil {
+		context.AbortWithStatusJSON(http.StatusInternalServerError, "GET cases query failed")
+		return
+	}
+
+	var cases []Case
+	for rows.Next() {
+		var case_row Case
+		if err = rows.Scan(&case_row.ID, &case_row.CaseNumber, &case_row.ClientName, &case_row.CaseType,
+						   &case_row.Status, &case_row.LastActivity, &case_row.CreatedAt, &case_row.UpdatedAt); err != nil {
+			context.AbortWithStatusJSON(http.StatusInternalServerError, "Error processing case row")
+			return
+		}
+		cases = append(cases, case_row)
+	}
+	if err = rows.Err(); err != nil {
+		context.AbortWithStatusJSON(http.StatusInternalServerError, err)
+		return
+	}
+
+	context.JSON(http.StatusOK, cases)
 }
 
 func getHealthHandler(context *gin.Context) {
 	err := db.Ping()
 	if err != nil {
-		context.AbortWithStatus(401)
+		context.AbortWithStatus(http.StatusInternalServerError)
 		return
 	}
-	context.Status(200)
+	context.Status(http.StatusOK)
 }
 
 func main() {
