@@ -2,14 +2,59 @@
 
 .navigation {
   /* Add your navigation styles here */
-  background-color: #f8f9fa;
-  padding: 1rem;
-  border-bottom: 1px solid #dee2e6;
+  background-color: #5b5b5b; /*#f8f9fa;*/
+  padding: 0.5rem;
+  border: 3px solid black; /*#dee2e6;*/
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.nav-placeholder {
-  text-align: center;
-  color: #6c757d;
+.logo {
+  border-radius: 50%;
+  border: 3px solid black;
+  width: 80px;
+  height: 80px;
+}
+
+.nav-title {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-left: 0.5em;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin-right: 0.5em;
+}
+.nav-links li {
+  font-size: 1.2em;
+}
+.nav-links a {
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0px 8px 0px 8px;
+}
+.nav-links a:visited {
+  color: black;
+}
+.nav-links a:hover {
+  color: antiquewhite;
+}
+
+.profile {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+.profile:hover {
+  background-color: antiquewhite;
+}
+
+.block {
+  display: flex;
+  align-items: center;
 }
 
 /* TODO: Add styles for:
