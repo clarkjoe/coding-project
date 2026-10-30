@@ -4,17 +4,19 @@
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  border: 1px solid black;
 }
 
 .widget-header {
-  background-color: #2c5282;
+  background-color: rgb(28, 53, 94);
   color: white;
   padding: 1rem;
 }
 
 .widget-header h2 {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.25em;
 }
 
 .widget-content {
@@ -26,6 +28,7 @@
   border-radius: 8px;
   margin-bottom: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 0.9em;
 }
 
 .case-details {

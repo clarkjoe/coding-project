@@ -5,7 +5,7 @@
   margin: 0 auto;
   /* background-color:#6c757d; */
   background-color: antiquewhite;
-  height: 100%;
+  height: fit-content;
 }
 
 .dashboard-header {

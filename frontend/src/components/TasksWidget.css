@@ -5,6 +5,8 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  height: fit-content;
+  border: 1px solid black;
 }
 
 .widget-header {
@@ -16,7 +18,7 @@
 
 .widget-header h2 {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.25em;
 }
 
 .widget-content {
@@ -28,6 +30,7 @@
   border-radius: 8px;
   margin-bottom: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 0.9em;
 }
 
 .task-details {
@@ -38,13 +41,13 @@
 }
 
 .priority-bar.low {
-  border-bottom: 10px solid rgb(171, 244, 80);
+  border-bottom: 14px solid rgb(160, 244, 59);
 }
 .priority-bar.medium {
-  border-bottom: 10px solid rgb(219, 235, 47);
+  border-bottom: 14px solid rgb(236, 252, 66);
 }
 .priority-bar.high {
-  border-bottom: 10px solid rgb(235, 41, 41);
+  border-bottom: 14px solid rgb(235, 41, 41);
 }
 
 /* TODO: Add styles for:

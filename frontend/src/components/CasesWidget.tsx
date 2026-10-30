@@ -36,7 +36,7 @@ const CasesWidget = () => {
         {isLoading ? 
           <p>loading</p>
         : isError ? 
-          <h1>{'Error loading cases'}</h1>
+          <h1>{'<Error loading cases>'}</h1>
         : cases.map((caseData) => {
           return (
             <div className='case' key={caseData.id}>
@@ -49,6 +49,7 @@ const CasesWidget = () => {
                   <p><b>Case Number:</b> {caseData.case_number}</p>
                 </div>
                 <p>{caseData.last_activity}</p>
+                <br/>
                 <p><i>Last updated on {new Date(caseData.updated_at).toLocaleString('en-US', {dateStyle: "long", timeStyle: "short"})}</i></p>
               </div>
             </div>

@@ -35,7 +35,7 @@ const TasksWidget = () => {
         {isLoading ? 
           <p>loading</p>
         : isError ? 
-          <h1>{'Error loading tasks'}</h1>
+          <h1>{'<Error loading tasks>'}</h1>
         : tasks.map((task) => {
           return (
             <div className='task' key={task.id}>
@@ -46,9 +46,11 @@ const TasksWidget = () => {
               <div className="widget-content">
                 <div className="task-details">
                   <p><b>Status:</b> {task.status}</p>
-                  <p>{new Date(task.due_date).toLocaleString('en-US', {dateStyle: "long", timeStyle: "short"})}</p>
+                  <p><b>Due:</b> {new Date(task.due_date).toLocaleString('en-US', {dateStyle: "long", timeStyle: "short"})}</p>
                 </div>
                 <p>{task.description}</p>
+                <br/>
+                <p><i>Last updated on {new Date(task.updated_at).toLocaleString('en-US', {dateStyle: "long", timeStyle: "short"})}</i></p>
               </div>
             </div>
           );
