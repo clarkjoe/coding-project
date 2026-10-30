@@ -11,6 +11,7 @@
   background-color: #1a365d;
   color: white;
   padding: 1rem;
+  border-radius: 8px 8px 0px 0px;
 }
 
 .widget-header h2 {
@@ -22,13 +23,28 @@
   padding: 1rem;
 }
 
-.placeholder-content {
-  color: #6c757d;
-  text-align: left;
+.task {
+  border: 1px solid black;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.placeholder-content ul {
-  margin-top: 1rem;
+.task-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+  border-bottom: 5px solid black;
+}
+
+.priority-bar.low {
+  border-bottom: 10px solid rgb(171, 244, 80);
+}
+.priority-bar.medium {
+  border-bottom: 10px solid rgb(219, 235, 47);
+}
+.priority-bar.high {
+  border-bottom: 10px solid rgb(235, 41, 41);
 }
 
 /* TODO: Add styles for:

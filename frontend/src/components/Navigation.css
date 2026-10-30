@@ -2,9 +2,9 @@
 
 .navigation {
   /* Add your navigation styles here */
-  background-color: #5b5b5b; /*#f8f9fa;*/
+  background-color: #838384; /*#f8f9fa;*/
   padding: 0.5rem;
-  border: 3px solid black; /*#dee2e6;*/
+  border-bottom: 3px solid black; /*#dee2e6;*/
   display: flex;
   align-items: center;
   justify-content: space-between;
