@@ -3,6 +3,7 @@ import './CasesWidget.css'
 // TODO: Import your API service and types
 import { getCases } from '../services/api'
 import { Case } from '../types'
+import { ClipLoader } from 'react-spinners'
 
 const CasesWidget = () => {
   // TODO: Add state management for cases, loading, and errors
@@ -34,7 +35,7 @@ const CasesWidget = () => {
       
       <div className="widget-content">
         {isLoading ? 
-          <p>loading</p>
+          <ClipLoader loading={isLoading}/>
         : isError ? 
           <h1>{'<Error loading cases>'}</h1>
         : cases.map((caseData) => {

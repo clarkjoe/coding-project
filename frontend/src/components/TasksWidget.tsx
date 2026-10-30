@@ -3,6 +3,7 @@ import './TasksWidget.css'
 // TODO: Import your API service and types
 import { getTasks } from '../services/api'
 import { Task } from '../types'
+import { ClipLoader } from 'react-spinners'
 
 const TasksWidget = () => {
   // TODO: Add state management for tasks, loading, and errors
@@ -33,7 +34,7 @@ const TasksWidget = () => {
       
       <div className="widget-content">
         {isLoading ? 
-          <p>loading</p>
+          <ClipLoader loading={isLoading}/>
         : isError ? 
           <h1>{'<Error loading tasks>'}</h1>
         : tasks.map((task) => {
