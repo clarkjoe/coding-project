@@ -16,10 +16,10 @@ const Navigation = () => {
 
       <div className='block'>
         <ul className="nav-links">
+          <a href="#"><li>Home</li></a>
           <a href="#"><li>About</li></a>
-          <a href="#"><li>About</li></a>
-          <a href="#"><li>About</li></a>
-          <a href="#"><li>About</li></a>
+          <a href="#"><li>Services</li></a>
+          <a href="#"><li>Contact</li></a>
         </ul>
 
         <img className="profile" src="https://cdn-icons-png.flaticon.com/512/6522/6522516.png" alt="Profile Icon"></img>

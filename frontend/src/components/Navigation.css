@@ -2,24 +2,29 @@
 
 .navigation {
   /* Add your navigation styles here */
-  background-color: #838384; /*#f8f9fa;*/
+  /* background-color: #838384; #f8f9fa; */
+  background-color: rgb(28, 53, 94);
   padding: 0.5rem;
   border-bottom: 3px solid black; /*#dee2e6;*/
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: antiquewhite;
 }
 
 .logo {
   border-radius: 50%;
-  border: 3px solid black;
+  border: 2px solid black;
   width: 80px;
   height: 80px;
 }
 
 .nav-title {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Papyrus;
   margin-left: 0.5em;
+  text-decoration: underline;
+  -webkit-text-stroke: 1px currentColor;
+  text-decoration-thickness: 4px;
 }
 
 .nav-links {
@@ -37,19 +42,20 @@
   margin: 0px 8px 0px 8px;
 }
 .nav-links a:visited {
-  color: black;
+  color: antiquewhite;
 }
 .nav-links a:hover {
-  color: antiquewhite;
+  color: rgb(180, 187, 198);
 }
 
 .profile {
   border-radius: 50%;
   width: 60px;
   height: 60px;
+  background-color: antiquewhite;
 }
 .profile:hover {
-  background-color: antiquewhite;
+  background-color: rgb(180, 187, 198);
 }
 
 .block {
