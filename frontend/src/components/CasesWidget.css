@@ -4,7 +4,6 @@
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
 }
 
 .widget-header {
@@ -22,13 +21,18 @@
   padding: 1rem;
 }
 
-.placeholder-content {
-  color: #6c757d;
-  text-align: left;
+.case {
+  border: 1px solid black;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.placeholder-content ul {
-  margin-top: 1rem;
+.case-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+  border-bottom: 5px solid black;
 }
 
 /* TODO: Add styles for:
