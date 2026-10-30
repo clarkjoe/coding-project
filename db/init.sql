@@ -37,7 +37,7 @@
 CREATE TABLE tasks (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL DEFAULT 'Unnamed Task',
-    description TEXT,
+    description TEXT NOT NULL DEFAULT '',
     priority VARCHAR(6) CHECK (priority IN ('low', 'medium', 'high')) NOT NULL DEFAULT 'low',
     status VARCHAR(11) CHECK (status IN ('pending', 'in_progress', 'completed')) NOT NULL DEFAULT 'pending',
     due_date TIMESTAMP NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE cases (
     client_name VARCHAR(255) NOT NULL,
     case_type VARCHAR(255) NOT NULL,
     status VARCHAR(11) CHECK (status IN ('pending', 'active', 'closed')) NOT NULL DEFAULT 'pending',
-    last_activity TEXT,
+    last_activity TEXT NOT NULL DEFAULT '',
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );

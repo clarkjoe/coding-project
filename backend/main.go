@@ -20,7 +20,7 @@ var db *sql.DB
 type Task struct {
     ID          int            `json:"id"`
     Title       string         `json:"title"`
-    Description sql.NullString `json:"description"`
+    Description string         `json:"description"`
     Priority    string         `json:"priority"`
     Status      string         `json:"status"`
     DueDate     time.Time      `json:"due_date"`
@@ -34,13 +34,13 @@ type Case struct {
     ClientName   string         `json:"client_name"`
     CaseType     string         `json:"case_type"`
     Status       string         `json:"status"`
-    LastActivity sql.NullString `json:"last_activity"`
+    LastActivity string         `json:"last_activity"`
     CreatedAt    time.Time      `json:"created_at"`
     UpdatedAt    time.Time      `json:"updated_at"`
 }
 
 func getTasksHandler(context *gin.Context) {
-	rows, err := db.Query("SELECT * FROM tasks WHERE status='pending' ORDER BY created_at DESC LIMIT 5")
+	rows, err := db.Query("SELECT * FROM tasks WHERE status='pending' ORDER BY due_date LIMIT 5")
 	if err != nil {
 		context.AbortWithStatusJSON(http.StatusInternalServerError, "GET tasks query failed")
 		return
@@ -113,7 +113,7 @@ func main() {
 	//make a new router
 	router := gin.Default()
 	router.Use(cors.New(cors.Config{
-		AllowOrigins: []string{"http://localhost:8080"},
+		AllowOrigins: []string{"http://localhost:3000"},
 		AllowMethods: []string{"GET", "OPTIONS"},
 		AllowHeaders: []string{"Origin", "Content-Type"},
 	}))
